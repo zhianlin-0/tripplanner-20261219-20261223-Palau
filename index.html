@@ -3,59 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zhian's Trip-1219 // Enjoy 🥳</title>
+    <title>Palau Dive & Jellyfish Trip 🇵🇼🤿🪼</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇵🇼🤿🪼</text></svg>">
     
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script> 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        coral: { 50: '#fff0f3', 100: '#ffe5ec', 200: '#ffc2d1', 400: '#ff85a1', 500: '#f07167', 600: '#df564b' },
-                        ocean: { 50: '#f0f8ff', 100: '#e0f2fe', 400: '#00b4d8', 500: '#0096c7', 600: '#0077b6' },
-                        sand: { 50: '#f3f8fc', 100: '#eef5fa', 200: '#d7e6f3', 800: '#1d2d44' }
+                        coral: { 
+                            50: '#fffaf5',   // 輕透夕陽粉白
+                            100: '#ffedd5',  // 溫暖夕陽米黃
+                            200: '#fed7aa',  // 珊瑚橘粉
+                            400: '#fb923c',  // 絢麗珊瑚橘
+                            500: '#f97316',  // 帛琉熱帶珊瑚橘 (Sun-kissed Coral)
+                            600: '#ea580c' 
+                        },
+                        ocean: { 
+                            50: '#ecfeff',   // 輕透果凍淺藍 (Lagoon water)
+                            100: '#cffafe',  // 冰川水母天藍 (Turquoise)
+                            400: '#22d3ee',  // 陽光折射透藍
+                            500: '#0284c7',  // 帛琉深邃藍 (Palau Deep Blue)
+                            600: '#0369a1' 
+                        },
+                        sand: { 
+                            50: '#fafaf9',   // 貝殼細沙白背景
+                            100: '#f5f5f4',  // 陽光溫沙米色
+                            200: '#e7e5e4',  // 礁岩淺灰
+                            800: '#0f172a'   // 企鵝極致深淵藍 (Text Main)
+                        }
                     },
-                    fontFamily: { serif: ['Playfair Display', 'Noto Serif TC', 'serif'], sans: ['Montserrat', 'Noto Sans TC', 'sans-serif'] }
+                    fontFamily: { 
+                        serif: ['Playfair Display', 'Noto Serif TC', 'serif'], 
+                        sans: ['Montserrat', 'Noto Sans TC', 'sans-serif'] 
+                    }
                 }
             }
         }
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #f3f8fc; color: #1d2d44; font-family: 'Montserrat', 'Noto Sans TC', sans-serif; }
-        .magazine-line { height: 1px; background: linear-gradient(90deg, transparent, #1d2d44 50%, transparent); }
+        body { background-color: #fafaf9; color: #0f172a; font-family: 'Montserrat', 'Noto Sans TC', sans-serif; }
+        .magazine-line { height: 1px; background: linear-gradient(90deg, transparent, #0f172a 50%, transparent); }
         .custom-cb:checked + span { text-decoration: line-through; color: #94a3b8; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* 🫧 帛琉深潛泡泡上升 Keyframes 動畫 */
+        @keyframes bubble-rise {
+            0% { transform: translateY(120px) translateX(0) scale(0.8); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(-30px) translateX(var(--sway-x)) scale(1.3); opacity: 0; }
+        }
+        @keyframes bubble-sway {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(15px); }
+        }
+        .animate-bubble-1 { 
+            --sway-x: 20px;
+            animation: bubble-rise 8s linear infinite; 
+            animation-delay: 0s;
+        }
+        .animate-bubble-2 { 
+            --sway-x: -25px;
+            animation: bubble-rise 11s linear infinite; 
+            animation-delay: 2.5s;
+        }
+        .animate-bubble-3 { 
+            --sway-x: 12px;
+            animation: bubble-rise 6.5s linear infinite; 
+            animation-delay: 4.5s;
+        }
     </style>
 </head>
 <body class="text-sand-800 min-h-screen flex flex-col antialiased pb-20 md:pb-6">
 
-    <!-- HERO HEADER -->
+    <!-- HERO HEADER (帛琉水母湖與大斷層深潛天際線) -->
     <header class="relative overflow-hidden bg-gradient-to-b from-ocean-100 via-coral-50 to-sand-50 pt-10 pb-6 px-4 text-center border-b border-sand-200/50 shadow-sm">
+        
+        <!-- ⛰️ 帛琉經典景致 ➔ 蕈狀 Rock Islands 與悠游海龜 -->
+        <svg class="absolute right-4 bottom-0 opacity-25 pointer-events-none hidden md:block" style="width: 140px; height: 120px;" viewBox="0 0 100 100" fill="none" stroke="#0284c7" stroke-width="1.5">
+            <!-- Rock Islands -->
+            <path d="M10 80 C 10 65 25 65 25 80" stroke-linecap="round" fill="#e0f2fe" fill-opacity="0.2" />
+            <path d="M30 80 C 30 60 50 60 50 80" stroke-linecap="round" fill="#e0f2fe" fill-opacity="0.2" />
+            <path d="M65 80 C 65 55 90 55 90 80" stroke-linecap="round" fill="#e0f2fe" fill-opacity="0.2" />
+            <!-- Sea Turtle gliding -->
+            <path d="M45 35 Q 55 30 65 35 T 75 45 T 65 50 Z" stroke-linecap="round" />
+            <path d="M50 31 C 48 25 55 23 58 29" /> <!-- front flipper -->
+            <path d="M60 49 C 62 55 55 57 52 51" /> <!-- back flipper -->
+            <path d="M72 40 Q 78 40 76 42" /> <!-- head -->
+            <!-- Ocean floor baseline -->
+            <path d="M0 80 H 100" stroke-width="1" stroke-dasharray="3,3" />
+        </svg>
+
+        <!-- 🤿 深海巨擘 ➔ 翩翩起舞的 Manta Ray 魟魚 -->
+        <div class="absolute left-6 bottom-2 opacity-25 pointer-events-none hidden md:block">
+            <svg style="width: 90px; height: 90px;" viewBox="0 0 100 100" fill="none" stroke="#ca674a" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
+                <!-- Manta Ray elegant path -->
+                <path d="M50 15 C35 25, 20 20, 10 35 C20 40, 35 42, 45 48 C43 65, 45 80, 50 95 C55 80, 57 65, 55 48 C65 42, 80 40, 90 35 C80 20, 65 25, 50 15 Z" stroke-linejoin="round" />
+                <path d="M46 25 Q 50 20 54 25" stroke-linecap="round"/>
+                <path d="M42 55 Q 50 53 58 55" opacity="0.5" />
+                <path d="M45 65 Q 50 63 55 65" opacity="0.5" />
+            </svg>
+        </div>
+
+        <!-- 🫧 帛琉深潛泡泡素材 1 -->
+        <svg class="absolute pointer-events-none animate-bubble-1 text-ocean-400/40" style="bottom: 0px; left: 18%; width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="9" cy="9" r="1.8" fill="currentColor" opacity="0.5" />
+        </svg>
+        <!-- 🫧 帛琉深潛泡泡素材 2 -->
+        <svg class="absolute pointer-events-none animate-bubble-2 text-ocean-400/30" style="bottom: 0px; left: 48%; width: 20px; height: 22px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="9" cy="9" r="2" fill="currentColor" opacity="0.5" />
+        </svg>
+        <!-- 🫧 帛琉深潛泡泡素材 3 -->
+        <svg class="absolute pointer-events-none animate-bubble-3 text-coral-400/40" style="bottom: 0px; left: 78%; width: 11px; height: 11px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+        </svg>
+
         <div class="absolute top-4 right-4 z-10 flex flex-col items-end gap-1.5">
-            <!-- ☁️ 雲端同步連線指示燈 (內建自動報錯偵錯顯示) -->
-            <div id="cloud-sync-status" class="inline-flex items-center gap-1.5 bg-gray-500/10 text-gray-500 text-[10px] font-bold px-2.5 py-1 rounded-full border border-gray-200 backdrop-blur-sm">
-                <span class="w-2 h-2 rounded-full bg-gray-400"></span>
-                <span id="cloud-status-text">💾 本地儲存模式 (請設定 GAS 網址)</span>
+            <!-- ☁️ 雲端同步連線指示燈 (簡約五字版) -->
+            <div id="cloud-sync-status" class="inline-flex items-center gap-1.5 bg-gray-500/10 text-gray-500 text-[10px] font-bold px-2.5 py-1 rounded-full border border-gray-200/50 backdrop-blur-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
+                <span id="cloud-status-text">本機儲存</span>
             </div>
-            <button onclick="openHeaderModal()" class="bg-white/80 hover:bg-white text-ocean-600 text-[10px] font-bold px-3 py-1.5 rounded-full border border-sand-200/80 shadow-sm transition-all backdrop-blur-sm font-sans">✏️ 編輯</button>
+            <button onclick="openHeaderModal()" class="bg-white/80 hover:bg-white text-coral-500 text-[10px] font-bold px-3 py-1.5 rounded-full border border-sand-200/80 shadow-sm transition-all backdrop-blur-sm font-sans">✏️ 編輯抬頭</button>
         </div>
         <div class="max-w-2xl mx-auto">
-            <span id="display-top-tag" class="text-[10px] uppercase tracking-[0.4em] text-ocean-600 font-bold block mb-2">Lamayisland</span>
-            <h1 id="display-title" class="font-serif text-3xl md:text-5xl font-semibold tracking-wide text-sand-800 mb-1">0710-0712 Trip</h1>
+            <span id="display-top-tag" class="text-[10px] uppercase tracking-[0.4em] text-coral-500 font-bold block mb-2">Palau Abyss Exploration 🇵🇼🤿</span>
+            <h1 id="display-title" class="font-serif text-3xl md:text-5xl font-semibold tracking-wide text-sand-800 mb-1">Palau Blue Corner Dive</h1>
             <div class="magazine-line my-3 opacity-20"></div>
-            <p id="display-desc" class="text-[10px] font-medium tracking-[0.25em] text-ocean-500/80 uppercase">2026 品元考試囉！✦ 會過嗎？不曉得</p>
+            <p id="display-desc" class="text-[10px] font-medium tracking-[0.25em] text-ocean-600 uppercase">2026 帛琉上帝的無毒水母湖與大斷層深潛</p>
         </div>
     </header>
 
     <!-- SPA NAVIGATION BAR -->
     <nav class="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-sand-200 py-1 shadow-sm">
         <div class="max-w-md mx-auto px-4 flex justify-around">
-            <button onclick="switchTab('itinerary')" id="nav-itinerary" class="nav-btn py-2.5 px-3 text-xs font-semibold tracking-wider text-ocean-600 border-b-2 border-ocean-500 flex items-center gap-1.5 outline-none font-sans">Schedule</button>
-            <button onclick="switchTab('splitter')" id="nav-splitter" class="nav-btn py-2.5 px-3 text-xs font-semibold tracking-wider text-gray-400 hover:text-ocean-600 flex items-center gap-1.5 outline-none font-sans">Split the bill</button>
-            <button onclick="switchTab('checklist')" id="nav-checklist" class="nav-btn py-2.5 px-3 text-xs font-semibold tracking-wider text-gray-400 hover:text-ocean-600 flex items-center gap-1.5 outline-none font-sans">Note</button>
+            <button onclick="switchTab('itinerary')" id="nav-itinerary" class="nav-btn py-2.5 px-3 text-xs font-semibold tracking-wider text-coral-500 border-b-2 border-coral-500 flex items-center gap-1.5 outline-none font-sans">Schedule</button>
+            <button onclick="switchTab('splitter')" id="nav-splitter" class="nav-btn py-2.5 px-3 text-xs font-semibold tracking-wider text-gray-400 hover:text-coral-500 flex items-center gap-1.5 outline-none font-sans">Split the bill</button>
+            <button onclick="switchTab('checklist')" id="nav-checklist" class="nav-btn py-2.5 px-3 text-xs font-semibold tracking-wider text-gray-400 hover:text-coral-500 flex items-center gap-1.5 outline-none font-sans">Note</button>
         </div>
     </nav>
 
@@ -64,25 +155,25 @@
         <!-- ================= PAGE 1: 行程頁面 ================= -->
         <section id="page-itinerary" class="page-section space-y-6">
             <div class="text-center max-w-md mx-auto">
-                <h2 id="title-itinerary" class="font-serif text-xl md:text-2xl font-semibold text-sand-800">Happy Diving</h2>
-                <p id="sub-itinerary" class="text-[10px] text-coral-500 font-bold mt-0.5 uppercase tracking-widest">Lamay Island</p>
+                <h2 id="title-itinerary" class="font-serif text-xl md:text-2xl font-semibold text-sand-800">Collecting Moments 🪼🐟</h2>
+                <p id="sub-itinerary" class="text-[10px] text-coral-500 font-bold mt-0.5 uppercase tracking-widest">Capturing the gentle side of life, one step at a time.</p>
                 <p class="text-[11px] text-gray-400 font-light mt-1.5">可自訂天數、自由編輯、點選 ▲▼ 調整順序，同步更新！</p>
             </div>
             <div class="flex items-center justify-center gap-2 overflow-x-auto py-1 no-scrollbar max-w-xl mx-auto px-2">
                 <div id="dynamic-day-buttons" class="flex gap-2 items-center"></div>
-                <button onclick="addNewDay()" class="shrink-0 bg-ocean-100 text-ocean-700 px-3 py-2 rounded-full text-xs font-bold border border-ocean-200">➕ 天數</button>
+                <button onclick="addNewDay()" class="shrink-0 bg-coral-50 text-coral-600 hover:bg-coral-100 px-3 py-2 rounded-full text-xs font-bold border border-coral-100">➕ 天數</button>
             </div>
             <div class="flex flex-wrap justify-center gap-3">
-                <button onclick="openItineraryModal()" class="bg-gradient-to-r from-ocean-500 to-ocean-600 text-white text-xs font-semibold px-4 py-2 rounded-full shadow-sm">➕ 行程</button>
+                <button onclick="openItineraryModal()" class="bg-gradient-to-r from-coral-400 to-coral-500 hover:from-coral-50 hover:to-coral-600 text-white text-xs font-semibold px-4 py-2 rounded-full shadow-sm">➕ 行程</button>
                 <button id="delete-day-btn" onclick="deleteCurrentDay()" class="bg-white text-rose-500 text-xs font-semibold px-4 py-2 rounded-full border border-rose-200 shadow-sm"></button>
             </div>
-            <div class="max-w-xl mx-auto"><div class="relative pl-6 border-l border-ocean-200 space-y-6" id="itinerary-timeline-container"></div></div>
+            <div class="max-w-xl mx-auto"><div class="relative pl-6 border-l border-coral-200 space-y-6" id="itinerary-timeline-container"></div></div>
         </section>
 
         <!-- ================= PAGE 2: 記帳頁面 ================= -->
         <section id="page-splitter" class="page-section hidden space-y-6">
             <div class="text-center max-w-md mx-auto">
-                <h2 id="title-splitter" class="font-serif text-xl md:text-2xl font-semibold text-sand-800">Track expenses</h2>
+                <h2 id="title-splitter" class="font-serif text-xl md:text-2xl font-semibold text-sand-800">Track expenses 💴</h2>
                 <p id="sub-splitter" class="text-[10px] text-coral-500 font-bold mt-0.5 uppercase tracking-widest">SMART DEBT RECONCILIATION</p>
             </div>
             <div class="space-y-4 max-w-lg mx-auto">
@@ -103,7 +194,7 @@
                     <div class="grid grid-cols-2 gap-3">
                         <div>
                             <label class="block text-[10px] font-bold text-gray-400 mb-1">開銷品項</label>
-                            <input type="text" id="expense-purpose" placeholder="民宿、浮潛等" class="w-full text-xs border border-sand-200 rounded-lg px-3 py-2 bg-sand-50/50 outline-none">
+                            <input type="text" id="expense-purpose" placeholder="裝備租借、出海船資等..." class="w-full text-xs border border-sand-200 rounded-lg px-3 py-2 bg-sand-50/50 outline-none">
                         </div>
                         <div>
                             <label class="block text-[10px] font-bold text-gray-400 mb-1">支出總額</label>
@@ -129,7 +220,7 @@
                     </div>
                     <div class="flex gap-2">
                         <button id="expense-cancel-btn" onclick="cancelExpenseEdit()" class="flex-1 bg-gray-100 text-gray-500 font-semibold py-2 rounded-xl text-xs hidden">取消</button>
-                        <button onclick="addExpense()" id="expense-submit-btn" class="flex-1 bg-gradient-to-r from-ocean-500 to-ocean-600 text-white font-semibold py-2 rounded-xl text-xs shadow-sm">儲存支出並計算</button>
+                        <button onclick="addExpense()" id="expense-submit-btn" class="flex-1 bg-gradient-to-r from-coral-400 to-coral-500 text-white font-semibold py-2 rounded-xl text-xs shadow-sm">儲存支出並計算</button>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -140,7 +231,7 @@
                         </div>
                         <div class="max-h-[220px] overflow-y-auto no-scrollbar"><ul id="expense-history-list" class="divide-y divide-sand-100"></ul></div>
                     </div>
-                    <div class="bg-gradient-to-br from-white to-ocean-50/50 rounded-2xl p-4 border border-ocean-200/50 shadow-sm">
+                    <div class="bg-gradient-to-br from-white to-coral-50/20 rounded-2xl p-4 border border-coral-100 shadow-sm">
                         <h4 class="font-serif text-xs font-semibold text-sand-800 mb-3">✨ 最佳化轉帳結算</h4>
                         <div class="max-h-[220px] overflow-y-auto no-scrollbar"><ul id="settlement-result-list" class="space-y-2"></ul></div>
                     </div>
@@ -151,13 +242,13 @@
         <!-- ================= PAGE 3: 備忘頁面 ================= -->
         <section id="page-checklist" class="page-section hidden space-y-6">
             <div class="text-center max-w-md mx-auto">
-                <h2 id="title-checklist" class="font-serif text-xl md:text-2xl font-semibold text-sand-800">Note!!!</h2>
+                <h2 id="title-checklist" class="font-serif text-xl md:text-2xl font-semibold text-sand-800">Diving Notes &amp; Gear 🤿</h2>
                 <p id="sub-checklist" class="text-[10px] text-coral-500 font-bold mt-0.5 uppercase tracking-widest">CHECKLIST & PACKING LIST</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
                 <div class="bg-white rounded-2xl p-4 border border-sand-200 shadow-sm">
                     <div class="flex items-center justify-between mb-3">
-                        <h3 class="font-serif text-xs font-semibold text-sand-800 flex items-center gap-1.5">🧳 行李清單</h3>
+                        <h3 class="font-serif text-xs font-semibold text-sand-800 flex items-center gap-1.5">🧳 潛水裝備打包</h3>
                         <span id="packing-stats" class="text-[9px] bg-sand-100 text-sand-800 px-2 py-0.5 rounded-full font-bold">0 / 0</span>
                     </div>
                     <div class="flex gap-1.5 mb-4">
@@ -168,7 +259,7 @@
                 </div>
                 <div class="bg-white rounded-2xl p-4 border border-sand-200 shadow-sm">
                     <div class="flex items-center justify-between mb-3">
-                        <h3 class="font-serif text-xs font-semibold text-sand-800 flex items-center gap-1.5">🗓 待辦事項</h3>
+                        <h3 class="font-serif text-xs font-semibold text-sand-800 flex items-center gap-1.5">🗓 出發前安全準備</h3>
                         <span id="pre-stats" class="text-[9px] bg-sand-100 text-sand-800 px-2 py-0.5 rounded-full font-bold">0 / 0</span>
                     </div>
                     <div class="flex gap-1.5 mb-4">
@@ -193,7 +284,7 @@
                 <div><label class="block font-bold text-gray-400 mb-1">主標題</label><input type="text" id="input-title" class="w-full border border-sand-200 rounded-lg px-3 py-2 outline-none"></div>
                 <div><label class="block font-bold text-gray-400 mb-1">副標題描述</label><input type="text" id="input-desc" class="w-full border border-sand-200 rounded-lg px-3 py-2 outline-none"></div>
             </div>
-            <button onclick="saveHeaderTexts()" class="w-full bg-gradient-to-r from-ocean-500 to-ocean-600 text-white font-bold py-2.5 rounded-xl text-xs shadow-sm font-sans">確認儲存</button>
+            <button onclick="saveHeaderTexts()" class="w-full bg-gradient-to-r from-coral-400 to-coral-500 text-white font-bold py-2.5 rounded-xl text-xs shadow-sm font-sans">確認儲存</button>
         </div>
     </div>
 
@@ -211,7 +302,7 @@
                 <div><label class="block font-bold text-gray-400 mb-1">Google Maps 網址 (選填)</label><input type="text" id="itinerary-map" class="w-full border border-sand-200 rounded-lg px-3 py-2 outline-none"></div>
                 <div><label class="block font-bold text-gray-400 mb-1">旅行小叮嚀 (選填)</label><textarea id="itinerary-notes" rows="2" class="w-full border border-sand-200 rounded-lg px-3 py-2 outline-none resize-none"></textarea></div>
             </div>
-            <button onclick="saveDynamicItinerary()" class="w-full bg-gradient-to-r from-ocean-500 to-ocean-600 text-white font-bold py-2.5 rounded-xl text-xs shadow-sm font-sans">確認儲存</button>
+            <button onclick="saveDynamicItinerary()" class="w-full bg-gradient-to-r from-coral-400 to-coral-500 text-white font-bold py-2.5 rounded-xl text-xs shadow-sm font-sans">確認儲存</button>
         </div>
     </div>
 
@@ -225,7 +316,7 @@
             <div class="space-y-3 text-xs">
                 <div><label class="block font-bold text-gray-400 mb-1">項目名稱</label><input type="text" id="input-todo-text" class="w-full border border-sand-200 rounded-lg px-3 py-2 outline-none"></div>
             </div>
-            <button onclick="saveTodoEdit()" class="w-full bg-gradient-to-r from-ocean-500 to-ocean-600 text-white font-bold py-2.5 rounded-xl text-xs shadow-sm font-sans">儲存修改</button>
+            <button onclick="saveTodoEdit()" class="w-full bg-gradient-to-r from-coral-400 to-coral-500 text-white font-bold py-2.5 rounded-xl text-xs shadow-sm font-sans">儲存修改</button>
         </div>
     </div>
 
@@ -235,7 +326,7 @@
             <p id="confirm-modal-text" class="text-xs text-gray-500 leading-relaxed">確定繼續執行嗎？</p>
             <div class="flex gap-2 justify-end">
                 <button id="confirm-cancel" class="bg-gray-100 text-gray-500 text-xs font-bold px-4 py-2 rounded-lg font-sans">取消</button>
-                <button id="confirm-ok" class="bg-ocean-50 text-white text-xs font-bold px-4 py-2 rounded-lg font-sans">確認</button>
+                <button id="confirm-ok" class="bg-coral-500 text-white text-xs font-bold px-4 py-2 rounded-lg font-sans">確認</button>
             </div>
         </div>
     </div>
@@ -248,30 +339,34 @@
     <script>
         // =========================================================================
         // 🔗 💡 【重要步驟：請在此貼上您的 GAS Web App URL】
-        // 請將下方引號內的網址換成您在 Google Sheets 後台部署拿到、結尾是 /exec 的網址。
         // =========================================================================
-        const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxhGYHQ2joUWD4P0mcdZsIWi2hUO2gnrDlaly3_MIjnOUjo70a4y5oFo1_VpcrkQYeX/exec"; 
+        const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz0gDA9x1MFM-LrldA77EDlNXQmaGLbbz7mtSKAPrUjpDWRgKWdVCJzANFshXOzi3Cv/exec"; 
 
-        const LOCAL_STORAGE_KEY = 'wanderlust_xiaoliuqiu_standalone_v1';
+        const LOCAL_STORAGE_KEY = 'wanderlust_yilan_standalone_v1';
 
-        // 預設核心資料
+        // 預設核心資料（符合您的帛琉深潛與水母湖之旅特色 🇵🇼🤿🪼🐋）
         let appState = {
             lastUpdated: 0,
             activeDay: 1,
-            header: { topTag: 'Lamayisland', title: '0710-0712 Trip', desc: '2026 品元考試囉！✦ 會過嗎？不曉得' },
-            sectionTitles: { itinerary: 'Happy Diving', itinerarySub: 'Lamay Island', splitter: 'Track expenses', splitterSub: 'SMART DEBT RECONCILIATION', checklist: 'Note!!!', checklistSub: 'CHECKLIST & PACKING LIST' },
-            members: ['芷嫻', '品元', '秉昱'],
+            header: { topTag: 'Palau Abyss Exploration 🇵🇼🤿', title: 'Palau Blue Corner Dive', desc: '2026 帛琉上帝的無毒水母湖與大斷層深潛' },
+            sectionTitles: { itinerary: 'Collecting Moments', itinerarySub: 'Capturing the gentle side of life, one step at a time.', splitter: 'Track expenses', splitterSub: 'SMART DEBT RECONCILIATION', checklist: 'Note!!!', checklistSub: 'CHECKLIST & PACKING LIST' },
+            members: ['芷嫻', '教練', '品元'],
             expenses: [],
             packingList: [
-                { id: 201, text: '底片電影相機 & 備用電池', checked: false },
-                { id: 202, text: '溫和尤加利防蚊液', checked: true }
+                { id: 201, text: '輕便防寒衣、水母衣與潛水襪 🤿', checked: false },
+                { id: 202, text: '自用低容積面鏡、呼吸管與蛙鞋 🧜‍♀️', checked: false },
+                { id: 203, text: '潛水電腦錶與水下手電筒 ⌚', checked: true },
+                { id: 204, text: '水下相機、防水殼與浮力棒 📸', checked: false }
             ],
             preTripList: [
-                { id: 301, text: '預約租車與保險填寫確認', checked: true }
+                { id: 301, text: '辦理帛琉入境許可 (Palau Entry Permit) 🇵🇼', checked: true },
+                { id: 302, text: '向教練預訂船潛行程與導潛確認 🚤', checked: true },
+                { id: 303, text: '申請帛琉國家公園潛水許可證 (Rock Islands Permit) 🎫', checked: false }
             ],
             itinerary: {
                 1: [
-                    { id: 1001, time: '10:00 AM', spot: '集合起點 ✦ 白沙尾觀光漁港咖啡館', duration: '1.5 小時', mapUrl: 'https://maps.google.com', notes: '點一杯手沖咖啡，領取預租的機車。' }
+                    { id: 1001, time: '09:30 AM', spot: '神奇無毒水母湖 🪼 (Jellyfish Lake)', duration: '2.5 小時', mapUrl: 'https://maps.google.com', notes: '輕柔共遊，絕對不能塗化學防曬油，禁止觸摸或將水母帶離水面！' },
+                    { id: 1002, time: '02:00 PM', spot: '著名大斷層 Big Drop Off 🐠', duration: '2 小時', mapUrl: 'https://maps.google.com', notes: '欣賞直落上百呎的深藍海牆與繽紛軟珊瑚，注意中性浮力避免碰撞岩壁。' }
                 ]
             }
         };
@@ -281,14 +376,14 @@
         let isSyncing = false;
 
         function renderHeaderTexts() {
-            document.getElementById('display-top-tag').innerText = appState.header.topTag || 'Lamayisland';
-            document.getElementById('display-title').innerText = appState.header.title || '0710-0712 Trip';
+            document.getElementById('display-top-tag').innerText = appState.header.topTag || 'Palau Abyss Exploration 🇵🇼🤿';
+            document.getElementById('display-title').innerText = appState.header.title || 'Palau Blue Corner Dive';
             document.getElementById('display-desc').innerText = appState.header.desc || '';
         }
 
         function renderSectionTitles() {
-            document.getElementById('title-itinerary').innerText = appState.sectionTitles.itinerary;
-            document.getElementById('sub-itinerary').innerText = appState.sectionTitles.itinerarySub;
+            document.getElementById('title-itinerary').innerText = "Collecting Moments";
+            document.getElementById('sub-itinerary').innerText = "Capturing the gentle side of life, one step at a time.";
             document.getElementById('title-splitter').innerText = appState.sectionTitles.splitter;
             document.getElementById('sub-splitter').innerText = appState.sectionTitles.splitterSub;
             document.getElementById('title-checklist').innerText = appState.sectionTitles.checklist;
@@ -305,8 +400,8 @@
 
             days.forEach(dayNum => {
                 const isActive = dayNum === appState.activeDay;
-                let sub = dayNum === 1 ? "" : dayNum === 2 ? "" : "";
-                container.innerHTML += `<button onclick="switchDay(${dayNum})" class="shrink-0 px-4 py-2 rounded-full text-xs font-semibold border border-sand-200 ${isActive ? 'bg-ocean-600 text-white shadow-md' : 'bg-white text-sand-800 hover:bg-sand-100'}">DAY ${String(dayNum).padStart(2, '0')}<span class="block text-[9px] font-normal ${isActive ? 'opacity-90' : 'opacity-50'}">${sub}</span></button>`;
+                let sub = dayNum === 1 ? "水母與大斷層" : dayNum === 2 ? "藍角與德國水道" : "鯊魚城與歸途";
+                container.innerHTML += `<button onclick="switchDay(${dayNum})" class="shrink-0 px-4 py-2 rounded-full text-xs font-semibold border border-sand-200 ${isActive ? 'bg-coral-500 text-white shadow-md' : 'bg-white text-sand-800 hover:bg-sand-100'}">DAY ${String(dayNum).padStart(2, '0')}<span class="block text-[9px] font-normal ${isActive ? 'opacity-90' : 'opacity-50'}">${sub}</span></button>`;
             });
             const dBtn = document.getElementById('delete-day-btn');
             if (days.length <= 1) dBtn.classList.add('hidden');
@@ -341,18 +436,18 @@
                 return;
             }
             items.forEach((item) => {
-                let mapHtml = item.mapUrl ? `<a href="${item.mapUrl}" target="_blank" class="inline-flex bg-ocean-50 text-ocean-600 px-2.5 py-1 rounded-full text-[10px] font-semibold border border-ocean-100">🗺️ 查看地圖</a>` : '';
+                let mapHtml = item.mapUrl ? `<a href="${item.mapUrl}" target="_blank" class="inline-flex bg-coral-50 text-coral-500 px-2.5 py-1 rounded-full text-[10px] font-semibold border border-coral-100">🗺️ 查看地圖</a>` : '';
                 let noteHtml = item.notes ? `<div class="mt-3 pt-2 border-t border-dashed border-sand-200 text-[11px] text-coral-500"><span class="font-bold">✦ 小叮嚀：</span>${item.notes}</div>` : '';
                 container.innerHTML += `
                     <div class="relative group itinerary-drag-item" draggable="true" data-id="${item.id}" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondragenter="handleDragEnter(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)">
-                        <div class="absolute -left-[31px] top-1.5 bg-ocean-500 w-3.5 h-3.5 rounded-full ring-4 ring-ocean-100"></div>
+                        <div class="absolute -left-[31px] top-1.5 bg-coral-500 w-3.5 h-3.5 rounded-full ring-4 ring-coral-100"></div>
                         <div class="bg-white border border-sand-200 rounded-xl p-4 shadow-sm hover:shadow-md cursor-grab">
                             <div class="flex justify-between items-start mb-1.5">
-                                <span class="text-[9px] font-bold tracking-widest text-ocean-600 bg-ocean-50 px-2 py-0.5 rounded">☰ ${formatTime(item.time)}</span>
+                                <span class="text-[9px] font-bold tracking-widest text-coral-600 bg-coral-50 px-2 py-0.5 rounded">☰ ${formatTime(item.time)}</span>
                                 <div class="flex items-center gap-1.5 text-xs text-gray-400">
                                     <span>⏱ ${item.duration}</span>
                                     <button onclick="moveItineraryItem(${item.id}, -1)">▲</button><button onclick="moveItineraryItem(${item.id}, 1)">▼</button>
-                                    <button onclick="editItineraryItem(${item.id})" class="text-gray-400 hover:text-ocean-500">✏️</button>
+                                    <button onclick="editItineraryItem(${item.id})" class="text-gray-400 hover:text-coral-500">✏️</button>
                                     <button onclick="deleteItineraryItem(${item.id})" class="text-gray-400 hover:text-coral-500">🗑️</button>
                                 </div>
                             </div>
@@ -367,20 +462,21 @@
             const container = document.getElementById('member-list-container'); container.innerHTML = '';
             document.getElementById('member-count').innerText = `${appState.members.length} 人`;
             appState.members.forEach((m, idx) => {
-                container.innerHTML += `<div class="inline-flex items-center gap-1.5 bg-ocean-50 text-ocean-700 px-2.5 py-1 rounded-full text-[10px] font-semibold border border-ocean-100"><span>${m}</span><button onclick="removeMember(${idx})">×</button></div>`;
+                container.innerHTML += `<div class="inline-flex items-center gap-1.5 bg-coral-50 text-coral-600 px-2.5 py-1 rounded-full text-[10px] font-semibold border border-coral-100"><span>${m}</span><button onclick="removeMember(${idx})">×</button></div>`;
             });
         }
 
+        // 頁面切換控制
         function switchTab(tabId) {
             document.querySelectorAll('.page-section').forEach(section => section.classList.add('hidden'));
             document.getElementById(`page-${tabId}`).classList.remove('hidden');
             document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('text-ocean-600', 'border-b-2', 'border-ocean-500');
+                btn.classList.remove('text-coral-500', 'border-b-2', 'border-coral-500');
                 btn.classList.add('text-gray-400');
             });
             const activeBtn = document.getElementById(`nav-${tabId}`);
             activeBtn.classList.remove('text-gray-400');
-            activeBtn.classList.add('text-ocean-600', 'border-b-2', 'border-ocean-500');
+            activeBtn.classList.add('text-coral-500', 'border-b-2', 'border-coral-500');
         }
 
         function renderPayerOptions() {
@@ -393,7 +489,7 @@
             appState.members.forEach(m => {
                 container.innerHTML += `
                     <div class="flex items-center justify-between bg-sand-50 border border-sand-200 rounded-xl px-3 py-1.5">
-                        <label class="inline-flex items-center gap-1.5 cursor-pointer"><input type="checkbox" value="${m}" checked onchange="autoDistributeIfEven()" class="sharer-cb rounded text-ocean-500 w-3.5 h-3.5 accent-ocean-500">
+                        <label class="inline-flex items-center gap-1.5 cursor-pointer"><input type="checkbox" value="${m}" checked onchange="autoDistributeIfEven()" class="sharer-cb rounded text-coral-500 w-3.5 h-3.5 accent-coral-500">
                         <span class="text-[10px] font-semibold">${m}</span></label>
                         <input type="number" id="custom-amount-${m}" placeholder="0" oninput="onCustomAmountInput()" class="custom-share-input w-20 text-right text-xs border border-sand-200 rounded-md px-1.5 py-0.5 outline-none bg-white font-mono font-bold text-coral-500 disabled:bg-gray-100">
                     </div>`;
@@ -411,12 +507,12 @@
                     <li class="py-2 flex justify-between items-center text-[11px]">
                         <div class="space-y-0.5 pr-2 flex-grow min-w-0">
                             <h5 class="font-semibold text-sand-800 text-xs truncate">${exp.purpose}</h5>
-                            <p class="text-gray-400 font-light truncate"><span class="text-ocean-600 font-medium">${exp.payer}</span> 付 · ${exp.sharedWith.length}人分</p>
+                            <p class="text-gray-400 font-light truncate"><span class="text-coral-500 font-medium">${exp.payer}</span> 付 · ${exp.sharedWith.length}人分</p>
                         </div>
                         <div class="flex items-center gap-2 shrink-0 font-bold text-coral-500">
                             <span>NT$ ${exp.amount.toLocaleString()}</span>
-                            <button onclick="editExpenseItem(${exp.id})" class="text-gray-300 hover:text-ocean-500">✏️</button>
-                            <button onclick="removeExpense(${exp.id})" class="text-gray-300 hover:text-coral-500 font-bold text-sm p-1">×</button>
+                            <button onclick="editExpenseItem(${exp.id})" class="text-gray-300 hover:text-coral-500 font-sans">✏️</button>
+                            <button onclick="removeExpense(${exp.id})" class="text-gray-300 hover:text-coral-500 font-bold text-sm p-1 font-sans">×</button>
                         </div>
                     </li>`;
             });
@@ -452,6 +548,8 @@
             while (i < dArray.length && j < cArray.length) {
                 let debtor = dArray[i], creditor = cArray[j];
                 let settleAmount = Math.min(debtor.amount, creditor.amount);
+                
+                // 💡 關鍵修復：將原先未定義的變數 d 修正為正確的 debtor
                 if (settleAmount > 0.5) transactions.push({ from: debtor.name, to: creditor.name, amount: Math.round(settleAmount) });
                 debtor.amount -= settleAmount; creditor.amount -= settleAmount;
                 if (debtor.amount <= 0.5) i++; if (creditor.amount <= 0.5) j++;
@@ -475,11 +573,11 @@
                 listEl.innerHTML += `
                     <li class="flex justify-between items-center bg-white p-2.5 rounded-xl border border-sand-200">
                         <label class="flex items-center gap-2 cursor-pointer truncate flex-grow">
-                            <input type="checkbox" onchange="toggleTodoItem('${type}', ${todo.id})" ${todo.checked ? 'checked' : ''} class="custom-cb rounded text-ocean-600 w-3.5 h-3.5">
+                            <input type="checkbox" onchange="toggleTodoItem('${type}', ${todo.id})" ${todo.checked ? 'checked' : ''} class="custom-cb rounded text-coral-500 w-3.5 h-3.5 focus:ring-coral-400">
                             <span class="text-xs font-medium truncate ${todo.checked ? 'line-through text-gray-400' : ''}">${todo.text}</span>
                         </label>
                         <div class="flex gap-2 text-gray-300">
-                            <button onclick="editTodoItem('${type}', ${todo.id})" class="hover:text-ocean-600">✏️</button>
+                            <button onclick="editTodoItem('${type}', ${todo.id})" class="hover:text-coral-500">✏️</button>
                             <button onclick="removeTodoItem('${type}', ${todo.id})" class="hover:text-coral-500">×</button>
                         </div>
                     </li>`;
@@ -489,9 +587,9 @@
 
         function sanitizeAppState() {
             if (!appState || typeof appState !== 'object') appState = {};
-            if (!appState.header) appState.header = { topTag: 'Lamayisland', title: '0710-0712 Trip', desc: '✦' };
-            if (!appState.sectionTitles) appState.sectionTitles = { itinerary: 'Happy Diving', itinerarySub: 'Lamay Island', splitter: 'Track expenses', splitterSub: 'SMART DEBT RECONCILIATION', checklist: 'Note!!!', checklistSub: 'CHECKLIST & PACKING LIST' };
-            if (!appState.members) appState.members = ['芷嫻', '品元', '秉昱'];
+            if (!appState.header) appState.header = { topTag: 'Palau Abyss Exploration 🇵🇼🤿', title: 'Palau Blue Corner Dive', desc: '2026 帛琉上帝的無毒水母湖與大斷層深潛' };
+            if (!appState.sectionTitles) appState.sectionTitles = { itinerary: 'Collecting Moments', itinerarySub: 'Capturing the gentle side of life, one step at a time.', splitter: 'Track expenses', splitterSub: 'SMART DEBT RECONCILIATION', checklist: 'Note!!!', checklistSub: 'CHECKLIST & PACKING LIST' };
+            if (!appState.members) appState.members = ['芷嫻', '教練', '品元'];
             if (!appState.expenses) appState.expenses = [];
             if (!appState.packingList) appState.packingList = [];
             if (!appState.preTripList) appState.preTripList = [];
@@ -529,7 +627,7 @@
             if (!GAS_WEB_APP_URL || GAS_WEB_APP_URL === "YOUR_GAS_WEB_APP_URL_HERE") {
                 useFirebase = false;
                 badge.className = "inline-flex items-center gap-1.5 bg-gray-500/10 text-gray-500 text-[10px] font-bold px-2.5 py-1 rounded-full border border-gray-200 backdrop-blur-sm";
-                txt.innerText = "💾 本地儲存模式 (請設定 GAS 網址)";
+                txt.innerText = "本地儲存";
                 return;
             }
 
@@ -537,11 +635,11 @@
             isSyncing = true;
 
             badge.className = "inline-flex items-center gap-1.5 bg-amber-500/10 text-amber-600 text-[10px] font-bold px-2.5 py-1 rounded-full border border-amber-500/20 backdrop-blur-sm animate-pulse";
-            txt.innerText = "🔄 同步中...";
+            txt.innerText = "同步中...";
 
             try {
                 if (action === "get") {
-                    console.log("正從資料庫撈取最新資料...");
+                    console.log("正在從 Google Sheets 撈取最新資料...");
                     const response = await fetch(GAS_WEB_APP_URL);
                     
                     // 💡 如果回傳的不是 200，立刻拋出錯誤顯示於網頁
@@ -556,13 +654,15 @@
                         
                         useFirebase = true;
                         badge.className = "inline-flex items-center gap-1.5 bg-emerald-500/10 text-emerald-600 text-[10px] font-bold px-2.5 py-1 rounded-full border border-emerald-500/20 backdrop-blur-sm";
-                        badge.querySelector('span').className = "w-2 h-2 rounded-full bg-emerald-500 animate-pulse";
-                        txt.innerText = "☁️ 雲端已同步";
+                        badge.querySelector('span').className = "w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse";
+                        
+                        // 💡 僅留下純淨的「雲端已同步」
+                        txt.innerText = "雲端已同步";
                     } else {
                         throw new Error(result.message || "GAS 後台解譯失敗");
                     }
                 } else if (action === "post") {
-                    console.log("資料傳送中");
+                    console.log("正在推送本地資料至 Google Sheets...");
                     const payload = {
                         action: "sync_all",
                         state: {
@@ -588,8 +688,10 @@
                     if (result.status === "success") {
                         useFirebase = true;
                         badge.className = "inline-flex items-center gap-1.5 bg-emerald-500/10 text-emerald-600 text-[10px] font-bold px-2.5 py-1 rounded-full border border-emerald-500/20 backdrop-blur-sm";
-                        badge.querySelector('span').className = "w-2 h-2 rounded-full bg-emerald-500 animate-pulse";
-                        txt.innerText = "☁️ 雲端已同步";
+                        badge.querySelector('span').className = "w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse";
+                        
+                        // 💡 僅留下純淨的「雲端已同步」
+                        txt.innerText = "雲端已同步";
                     } else {
                         throw new Error(result.message || "雲端覆寫失敗");
                     }
@@ -601,13 +703,13 @@
                 // 💡 終極優化：將精準報錯內容（如 TypeError / Cors / JSON 錯誤）直接噴在 UI 上！
                 let errorMsg = error.message || error;
                 if (errorMsg.includes("Failed to fetch")) {
-                    errorMsg = "連線被拒 (請檢查網址、CORS 權限或是否開啟匿名登入)";
+                    errorMsg = "連線被拒 (請檢查網址、CORS 權限)";
                 } else if (errorMsg.includes("Unexpected token")) {
-                    errorMsg = "後台傳回 HTML 錯誤頁 (通常是試算表分頁名稱對不上、或 GAS 授權未完成)";
+                    errorMsg = "後台傳回 HTML 錯誤頁";
                 }
                 
                 badge.className = "inline-flex items-center gap-1.5 bg-rose-500/10 text-rose-600 text-[10px] font-bold px-2.5 py-1 rounded-full border border-rose-500/20 backdrop-blur-sm";
-                badge.querySelector('span').className = "w-2 h-2 rounded-full bg-rose-500";
+                badge.querySelector('span').className = "w-1.5 h-1.5 rounded-full bg-rose-500";
                 txt.innerText = `⚠️ 同步異常: ${errorMsg}`;
                 
                 loadLocalBackup();
